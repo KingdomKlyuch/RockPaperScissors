@@ -7,8 +7,22 @@
 <body>
   <script>
 
+//assign function getComputerChoice to random return R P or S
+//assign function playerSelection that allows case insensitive R P or S input
+//write function that plays single round using prior functions & declares winner
+//write function game() call the playRound function inside after 5 rounds declare winner
 
 
+
+function getComputerChoice(weapon)
+{
+  
+return weapon[Math.floor(Math.random()*weapon.length)];
+     
+}
+
+let weapon = ['Rock',' Paper',' Scissors'];
+console.log(getComputerChoice(weapon));
 
 
 
