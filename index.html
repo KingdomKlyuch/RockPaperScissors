@@ -26,24 +26,33 @@ return computerweapon[Math.floor(Math.random()*computerweapon.length)];
      
 }
 
+let humanScoreCounter = 0;
+let computerScoreCounter = 0;
+
 function playRound(playerSelection, computerSelection) {
 
 	if (computerSelection === 'Scissors' && playerSelection === "paper"){
 	alert ("computer wins scissors beat paper");}
 else if (computerSelection === 'Rock' && playerSelection === "paper"){
-	alert ("player wins paper beats rock");}
+	alert ("player wins paper beats rock");
+	humanScoreCounter++;
+}
 else if (computerSelection === 'Paper' && playerSelection === "paper"){
 	alert ("it's a draw paper equals paper");}
 
 	if (computerSelection === 'Scissors' && playerSelection === "rock"){
-	alert ("player wins rock beats scissors");}
+	alert ("player wins rock beats scissors");
+	humanScoreCounter++;
+}
 else if (computerSelection === 'Rock' && playerSelection === "rock"){
 	alert ("it's a draw rock equals rock");}
 else if (computerSelection === 'Paper' && playerSelection === "rock"){
 	alert ("computer wins paper beats rock");}
 
 if (computerSelection === 'Paper' && playerSelection === "scissors"){
-	alert ("player wins scissors beat paper");}
+	alert ("player wins scissors beat paper");
+	humanScoreCounter++;
+}
 else if (computerSelection === 'Scissors' && playerSelection === "scissors"){
 	alert ("it's a draw scissors equals scissors");}
 else if (computerSelection === 'Rock' && playerSelection === "scissors"){
@@ -52,8 +61,7 @@ else if (computerSelection === 'Rock' && playerSelection === "scissors"){
 }
 
 
-let humanScoreCounter = ('a');
-let computerScoreCounter = ('b');
+
 while (computerScoreCounter && humanScoreCounter <= 4)
 {
 	//play another round
