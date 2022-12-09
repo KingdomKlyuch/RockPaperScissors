@@ -31,6 +31,7 @@ let computerScoreCounter = 0;
 
 function playRound(playerSelection, computerSelection) {
 
+
 	if (computerSelection === 'Scissors' && playerSelection === "paper"){
 	alert ("computer wins scissors beat paper");}
 else if (computerSelection === 'Rock' && playerSelection === "paper"){
@@ -61,14 +62,23 @@ else if (computerSelection === 'Rock' && playerSelection === "scissors"){
 }
 
 
+for (let i = 0; i < 5; i++) {
+  if (i < 5){
+	playRound;
+}
+  if (i < 5){
+	prompt ("Rock, paper, or Scissors?").toLowerCase();
+  }
+}
 
-while (computerScoreCounter && humanScoreCounter <= 4)
-{
-	//play another round
-}
-if (computerScoreCounter || humanScoreCounter >= 5) {
+
+//while (computerScoreCounter && humanScoreCounter <= 4)
+//{
+  
+//}
+//if (computerScoreCounter || humanScoreCounter >= 5) {
   //delcare winner
-}
+//}
 
 const computerweapon = ['Rock','Paper','Scissors'];
 const playerSelection = prompt ("Rock, paper, or Scissors?").toLowerCase();
