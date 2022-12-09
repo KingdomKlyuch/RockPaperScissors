@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Page Title</title>
+</head>
+<body>
+  <script>
+
+//assign function getComputerChoice to random return R P or S
+//assign function playerSelection that allows case insensitive R P or S input
+//write function that plays single round using prior functions & declares winner
+//write function game() call the playRound function inside after 5 rounds declare winner
+
+//const Rock = 1
+//const Paper = 2              ???
+//const Scissors = 3
+
+
+
+
+function getComputerChoice(computerweapon)
+{
+  
+return computerweapon[Math.floor(Math.random()*computerweapon.length)];
+     
+}
+
+let point = 1;
+let humanScoreStart = 0;
+let computerScoreStart = 0;
+
+const humanScoreCounter = ++humanScoreStart;
+const computerScoreCounter = ++computerScoreStart;
+
+function playRound(playerSelection, computerSelection) {
+
+
+	if (computerSelection === 'Scissors' && playerSelection === "paper"){
+	alert ("computer wins scissors beat paper");
+	(computerScoreCounter + point);
+}
+else if (computerSelection === 'Rock' && playerSelection === "paper"){
+	alert ("player wins paper beats rock");
+	(humanScoreCounter + point);
+}
+else if (computerSelection === 'Paper' && playerSelection === "paper"){
+	alert ("it's a draw paper equals paper");}
+
+else if (computerSelection === 'Scissors' && playerSelection === "rock"){
+	alert ("player wins rock beats scissors");
+	(humanScoreCounter + point);
+}
+else if (computerSelection === 'Rock' && playerSelection === "rock"){
+	alert ("it's a draw rock equals rock");}
+else if (computerSelection === 'Paper' && playerSelection === "rock"){
+	alert ("computer wins paper beats rock");
+	(computerScoreCounter + point);
+}
+
+else if (computerSelection === 'Paper' && playerSelection === "scissors"){
+	alert ("player wins scissors beat paper");
+	(humanScoreCounter + point);
+}
+else if (computerSelection === 'Scissors' && playerSelection === "scissors"){
+	alert ("it's a draw scissors equals scissors");}
+else if (computerSelection === 'Rock' && playerSelection === "scissors"){
+	alert ("computer wins rock beats scissors");
+	(computerScoreCounter + point);
+}
+
+}
+
+
+for (let i = 0; i < 5; i++) {
+  if (i < 5){
+	playRound;
+}
+  if (i < 5){
+	prompt ("Rock, paper, or Scissors?").toLowerCase();
+  }
+}
+
+
+//while (computerScoreCounter && humanScoreCounter <= 4)
+//{
+  
+//}
+//if (computerScoreCounter || humanScoreCounter >= 5) {
+  //delcare winner
+//}
+
+const computerweapon = ['Rock','Paper','Scissors'];
+const playerSelection = prompt ("Rock, paper, or Scissors?").toLowerCase();
+const computerSelection = getComputerChoice(computerweapon);
+
+
+
+playRound(playerSelection, computerSelection);
+
+
+</script>
+</body>
+</html>
