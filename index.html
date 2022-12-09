@@ -14,30 +14,35 @@
 
 
 
-let computerWeapon = ['Rock',' Paper',' Scissors'];
-function getComputerChoice(computerWeapon)
+function getComputerChoice(computerweapon)
 {
   
-return computerWeapon[Math.floor(Math.random()*computerWeapon.length)];
+return computerweapon[Math.floor(Math.random()*computerweapon.length)];
      
 }
 
+let computerweapon = ['Rock','Paper','Scissors'];
+console.log(getComputerChoice(computerweapon));
 //------------------------------------------------------------------------
-let playerWeapon = prompt("Type rock, paper, or scissors! ")
+
+//function getHumanChoice(humanweapon){ !!------temporarily out of order----!!
+
 function playRound(playerSelection, computerSelection) {
-
-  if (playerSelection ) {
-  }
-
-
+    switch (expression) {
+	case x:
+		// execute case x code block
+		break;
+	case y:
+		// execute case y code block
+		break;
+	default:
+		// execute default code block
+}
 }
 
-
-
-
-
-
-
+const playerSelection = "rock";
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection, computerSelection));
 
 
 
