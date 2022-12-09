@@ -23,24 +23,42 @@ return computerweapon[Math.floor(Math.random()*computerweapon.length)];
      
 }
 
+
+
 //------------------------------------------------------------------------
-//prompt("Rock, paper, or scissors?")
 
 function playRound(playerSelection, computerSelection) {
-if (computerSelection === 'Scissors' && playerSelection === "rock"){
-	alert ("player wins");}
+
+	if (computerSelection === 'Scissors' && playerSelection === "paper"){
+	alert ("computer wins scissors beat paper");}
+else if (computerSelection === 'Rock' && playerSelection === "paper"){
+	alert ("player wins paper beats rock");}
+else if (computerSelection === 'Paper' && playerSelection === "paper"){
+	alert ("it's a draw paper equals paper");}
+
+	if (computerSelection === 'Scissors' && playerSelection === "rock"){
+	alert ("player wins rock beats scissors");}
 else if (computerSelection === 'Rock' && playerSelection === "rock"){
-	alert ("it's a draw");}
+	alert ("it's a draw rock equals rock");}
 else if (computerSelection === 'Paper' && playerSelection === "rock"){
-	alert ("computer wins");}
+	alert ("computer wins paper beats rock");}
+
+if (computerSelection === 'paper' && playerSelection === "scissors"){
+	alert ("player wins scissors beat paper");}
+else if (computerSelection === 'scissors' && playerSelection === "scissors"){
+	alert ("it's a draw scissors equals scissors");}
+else if (computerSelection === 'rock' && playerSelection === "scissors"){
+	alert ("computer wins rock beats scissors");}
 
 }
 
 
 
+
 const computerweapon = ['Rock','Paper','Scissors'];
-const playerSelection = "rock";
+const playerSelection = prompt ("Rock, paper, or Scissors?").toLowerCase();
 const computerSelection = getComputerChoice(computerweapon);
+
 
 
 playRound(playerSelection, computerSelection);
