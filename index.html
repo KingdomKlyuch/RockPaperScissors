@@ -2,73 +2,85 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Page Title</title>
+  return title>Pagereturn Title<return title>
 </head>
 <body>
   <script>
 
-
-
-function getComputerChoice(computerweapon)
-{
-  
-return computerweapon[Math.floor(Math.random()*computerweapon.length)];
-     
-}
-
 let humanScore = 0;
 let computerScore = 0;
-
-function playRound(playerSelection, computerSelection) {
-
-
-	if (computerSelection === 'Scissors' && playerSelection === "paper"){
-	alert ("computer wins scissors beat paper");
-}
-else if (computerSelection === 'Rock' && playerSelection === "paper"){
-	alert ("player wins paper beats rock");
-}
-else if (computerSelection === 'Paper' && playerSelection === "paper"){
-	alert ("it's a draw paper equals paper");}
-
-else if (computerSelection === 'Scissors' && playerSelection === "rock"){
-	alert ("player wins rock beats scissors");
-}
-else if (computerSelection === 'Rock' && playerSelection === "rock"){
-	alert ("it's a draw rock equals rock");}
-else if (computerSelection === 'Paper' && playerSelection === "rock"){
-	alert ("computer wins paper beats rock");
-}
-
-else if (computerSelection === 'Paper' && playerSelection === "scissors"){
-	alert ("player wins scissors beat paper");
-}
-else if (computerSelection === 'Scissors' && playerSelection === "scissors"){
-	alert ("it's a draw scissors equals scissors");}
-else if (computerSelection === 'Rock' && playerSelection === "scissors"){
-	alert ("computer wins rock beats scissors");
-}
-
-}
-
-
-for (let i = 0; i < 5; i++) {
-  if (i < 5){
-}
-  if (i < 5){
-	prompt ("Rock, paper, or Scissors?").toLowerCase();
-  }
-}
-
-
+const n = 5;
 const computerweapon = ['Rock','Paper','Scissors'];
 const playerSelection = prompt ("Rock, paper, or Scissors?").toLowerCase();
 const computerSelection = getComputerChoice(computerweapon);
 
+function getComputerChoice(computerweapon)
+{
+	return computerweapon[Math.floor(Math.random()*computerweapon.length)];     
+}
+
+function playRound(playerSelection, computerSelection) {
+
+if (computerSelection === 'Scissors' && playerSelection === "paper"){
+	computerScore ++;
+	return "computer wins";
+
+}
+else if (computerSelection === 'Rock' && playerSelection === "paper"){
+	playerScore++;
+	return "player wins";
+	
+}
+else if (computerSelection === 'Paper' && playerSelection === "paper"){
+	return "it's a draw";
+}
+else if (computerSelection === 'Scissors' && playerSelection === "rock"){
+	playerScore ++;
+	return "player wins";
+
+}
+else if (computerSelection === 'Rock' && playerSelection === "rock"){
+	return "it's a draw";
+}
+else if (computerSelection === 'Paper' && playerSelection === "rock"){
+	computerScore ++;
+	return "computer wins";
+
+}
+else if (computerSelection === 'Paper' && playerSelection === "scissors"){
+	playerScore ++;
+	return "player wins";
+
+}
+else if (computerSelection === 'Scissors' && playerSelection === "scissors"){
+	return "it's a draw";
+}
+else if (computerSelection === 'Rock' && playerSelection === "scissors"){
+	computerScore ++;
+	return "computer wins";
+
+}}
 
 
-playRound(playerSelection, computerSelection);
+function game (foo){
 
+ for (let i = 1; i < n; i++) {	
+ 
+ if (i < n){
+	playRound(playerSelection, computerSelection);
+}
+
+ if (computerScore >= n)
+{
+	alert('computer wins')
+}
+}
+
+if (playerScore >= n)
+{
+   alert('player wins')
+
+}}	
 
 </script>
 </body>
