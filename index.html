@@ -5,6 +5,18 @@
   <title>Page Title</title>
 </head>
 <body>
+
+<div id="playerButtons">
+  <button id="rockButton"></button>
+  <button id="paperButton"></button>
+  <button id="scissorsButton"></button>
+</div>
+
+<div id="scoreCard">
+  <div class="playerScoreCard">0</div>
+  <div class="computerScoreCard">0</div>
+</div>
+
   <script>
 let winner = 0;
 let humanScore = 0;
@@ -20,18 +32,18 @@ function getComputerChoice()
   else return 'Scissors';    
 }
 
-game();
+// game();
 
-function game() {
-  while (humanScore <= 5 && computerScore <= 5) {
-    let playerSelection = prompt("Rock, Paper, or Scissors?");
-    let computerSelection = getComputerChoice();
-    playerSelection = playerSelection.toUpperCase();
-    computerSelection = computerSelection.toUpperCase();
-    alert(playRound(playerSelection, computerSelection));
-  }
-  alert(win_condition());
-}
+// function game() {
+//   while (humanScore <= 5 && computerScore <= 5) {
+//     let playerSelection = prompt("Rock, Paper, or Scissors?");
+//     let computerSelection = getComputerChoice();
+//     playerSelection = playerSelection.toUpperCase();
+//     computerSelection = computerSelection.toUpperCase();
+//     alert(playRound(playerSelection, computerSelection));
+//   }
+//   alert(win_condition());
+// }
 
 
 function playRound(playerSelection, computerSelection) {
@@ -79,14 +91,43 @@ else if (computerSelection === 'ROCK' && playerSelection === "SCISSORS"){
 
 }}
 
-function win_condition() {
-  if (humanScore == 5) {
-    return 'Player Wins!';
-  }
-  if (computerScore == 5) {
-    return 'Computer wins!';
-  }
-}
+// function win_condition() {
+//   if (humanScore == 5) {
+//     return 'Player Wins!';
+//   }
+//   if (computerScore == 5) {
+//     return 'Computer wins!';
+//   }
+// }
+const playerButtons = document.querySelectorAll('button')
+
+playerButtons.forEach((button) => {
+
+    button.addEventListener('click', () => {
+      alert(rockButton.id); 
+
+    button.addEventListener('click', () => {
+      alert(paperButton.id);
+    
+    button.addEventListener('click', () => {
+      alert(scissorsButton.id);
+});
+}); }); });
+
+const scoreCard = document.querySelectorAll('score')
+
+scoreCard.forEach((score) => {
+
+    score.addEventListener(computerScore => {
+      ++playerScoreCard.id;
+
+    score.addEventListener(playerScore => {
+      ++playerScoreCard.id;
+
+}); 
+}); }); 
+
+
 
 
 </script>
