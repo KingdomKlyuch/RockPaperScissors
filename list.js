@@ -9,8 +9,8 @@ const buttons = document.querySelectorAll('.button');
 buttons.forEach(button => {
 	button.addEventListener("click", () => {
         playerSelection = button.textContent.toUpperCase();
-        let computerSelection = getComputerChoice();
-        let result = playRound(playerSelection, computerSelection);
+        computerSelection = getComputerChoice();
+        result = playRound(playerSelection, computerSelection);
 
         game();
     });
@@ -79,6 +79,8 @@ return `Player chose ${playerSelection}, computer chose ${computerSelection}`;
 }
 
 game();
+
+alert(win_condition());
 
 function game() {
     while (humanScore <= 5 && computerScore <= 5) {
