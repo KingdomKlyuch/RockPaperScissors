@@ -19,6 +19,13 @@ let computerScore = 0;
 //   }
 //   alert(win_condition());
 // }
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+    
+      playRound(button.textContent);
+    });
+  });
+
 function getComputerChoice() 
     let number = Math.floor(Math.random() * (3 + 1));
 
@@ -73,7 +80,10 @@ else if (computerSelection === 'ROCK' && playerSelection === "SCISSORS"){
 	computerScore +=1;
 	return  computerSelection + "beats" + playerSelection + "ouch!";
 
-}}
+
+}
+return `Player chose ${playerSelection}, computer chose ${computerSelection}`;
+}
 
 // function win_condition() {
 //   if (humanScore == 5) {
@@ -85,7 +95,8 @@ else if (computerSelection === 'ROCK' && playerSelection === "SCISSORS"){
 // }
 
 
-buttons.forEach(button => button.addEventListener("click", playRound)
-);
+
+
+
 
 
