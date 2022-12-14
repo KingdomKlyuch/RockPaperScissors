@@ -3,17 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <title>Page Title</title>
+  
+</head>
+<body>
+	<script src="list.js"></script>
 
 
 <div id="playerButtons">
-	<button id="rockButton">Rock</button>
-	<button id="paperButton">Paper</button>
-	<button id="scissorsButton">Scissors</button>
+	<button class="button" id="rockButton">Rock</button>
+	<button class="button" id="paperButton">Paper</button>
+	<button class="button" id="scissorsButton">Scissors</button>
 </div>
   
+
+<label id='startButtonLabel' for='startButton'>Push button to start</label>
+<button id='startButton'></button>
+<div id='scoreAndMessageContainer'>
+  <div id='gameMessages'></div>
 <div id="scoreCard">
-	<div class="playerScoreCard">0</div>
-	<div class="computerScoreCard">0</div>
+	<div id="playerScoreCard">0</div>
+	<div id="computerScoreCard">0</div>
 </div>
 
 
@@ -21,4 +30,8 @@
 
 </body>
 </html>
+
+
+
+  
 
