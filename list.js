@@ -1,3 +1,5 @@
+const scorePlayer = document.querySelector('.playerScoreCard');
+const scoreComputer = document.querySelector('.computerScoreCard');
 let winner = 0;
 let humanScore = 0;
 let computerScore = 0;
@@ -20,15 +22,9 @@ buttons.forEach(button => {
 
 
   function getComputerChoice(){
-let number = Math.floor(Math.random() * (3 + 1));
-
-    if (number == 1){
-    return 'Rock';}
-    else if (number == 2){
-    return 'Paper';}
-    else {
-    return 'Scissors';    
-}};
+    const choice = ["Rock", "Paper", "Scissor"];
+    return choice[Math.floor(Math.random() * 3)];  
+};
 
 
 
@@ -88,10 +84,9 @@ function game() {
       } else if (result.includes('Computer')) {
         computerScore++;
       }
-    }
-  }
+    }};
 
-alert(win_condition());
+    alert(win_condition(humanScore, computerScore));
 
  function win_condition() {
  if (humanScore == 5) {
