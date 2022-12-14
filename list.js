@@ -1,83 +1,74 @@
-
-const buttons = document.querySelectorAll('.button');
 let winner = 0;
 let humanScore = 0;
 let computerScore = 0;
+let playerSelection = '';
+let result = playRound(playerSelection, computerSelection);
 
+const buttons = document.querySelectorAll('.button');
 
-
-
-// game();
-
-// function game() {
-//   while (humanScore <= 5 && computerScore <= 5) {
-//     let playerSelection = prompt("Rock, Paper, or Scissors?");
-//     let computerSelection = getComputerChoice();
-//     playerSelection = playerSelection.toUpperCase();
-//     computerSelection = computerSelection.toUpperCase();
-//     alert(playRound(playerSelection, computerSelection));
-//   }
-//   alert(win_condition());
-// }
 buttons.forEach(button => {
-    button.addEventListener("click", () => {
-    
-      playRound(button.textContent);
+	button.addEventListener("click", () => {
+        let playerSelection = button.textContent.toUpperCase();
+        let computerSelection = getComputerChoice();
+        let result = playRound(playerSelection, computerSelection);
     });
-  });
+});
 
-function getComputerChoice() 
-    let number = Math.floor(Math.random() * (3 + 1));
 
-  if (number == 1){
+
+  function getComputerChoice() {
+let number = Math.floor(Math.random() * (3 + 1));{
+
+    if (number == 1){
     return 'Rock';}
-  else if (number == 2){
+    else if (number == 2){
     return 'Paper';}
-  else {
-  return 'Scissors';    
-};
+    else {
+    return 'Scissors';    
+}}};
+
+
 
 function playRound(playerSelection, computerSelection) {
-playerSelection = playerSelection.toUpperCase();
 computerSelection = computerSelection.toUpperCase();
 
 
-if (computerSelection === 'SCISSORS' && playerSelection === "PAPER"){
-	computerScore +=1;
+    if (computerSelection === 'SCISSORS' && playerSelection === "PAPER"){
+computerScore +=1;
 	return playerSelection + "beats" + computerSelection + "gratz";
 
 }
-else if (computerSelection === 'ROCK' && playerSelection === "PAPER"){
-	humanScore+=1;
+    else if (computerSelection === 'ROCK' && playerSelection === "PAPER"){
+humanScore+=1;
 	return playerSelection + "beats" + computerSelection + "gratz";
 	
 }
-else if (computerSelection === 'PAPER' && playerSelection === "PAPER"){
+    else if (computerSelection === 'PAPER' && playerSelection === "PAPER"){
 	return "it's a draw";
 }
-else if (computerSelection === 'SCISSORS' && playerSelection === "ROCK"){
-	humanScore +=1;
+    else if (computerSelection === 'SCISSORS' && playerSelection === "ROCK"){
+humanScore +=1;
 	return playerSelection + "beats" + computerSelection + "gratz";
 
 }
-else if (computerSelection === 'ROCK' && playerSelection === "ROCK"){
+    else if (computerSelection === 'ROCK' && playerSelection === "ROCK"){
 	return "it's a draw";
 }
-else if (computerSelection === 'PAPER' && playerSelection === "ROCK"){
-	computerScore +=1;
+    else if (computerSelection === 'PAPER' && playerSelection === "ROCK"){
+computerScore +=1;
 	return  computerSelection + "beats" + playerSelection + "ouch!";
 
 }
-else if (computerSelection === 'PAPER' && playerSelection === "SCISSORS"){
-	humanScore +=1;
+    else if (computerSelection === 'PAPER' && playerSelection === "SCISSORS"){
+humanScore +=1;
 	return computerSelection + "beats" + playerSelection + "ouch!";
 
 }
-else if (computerSelection === 'SCISSORS' && playerSelection === "SCISSORS"){
+    else if (computerSelection === 'SCISSORS' && playerSelection === "SCISSORS"){
 	return "it's a draw";
 }
-else if (computerSelection === 'ROCK' && playerSelection === "SCISSORS"){
-	computerScore +=1;
+    else if (computerSelection === 'ROCK' && playerSelection === "SCISSORS"){
+computerScore +=1;
 	return  computerSelection + "beats" + playerSelection + "ouch!";
 
 
@@ -85,14 +76,36 @@ else if (computerSelection === 'ROCK' && playerSelection === "SCISSORS"){
 return `Player chose ${playerSelection}, computer chose ${computerSelection}`;
 }
 
-// function win_condition() {
-//   if (humanScore == 5) {
-//     return 'Player Wins!';
-//   }
-//   if (computerScore == 5) {
-//     return 'Computer wins!';
-//   }
-// }
+game();
+
+    function game() {
+(playRound(playerSelection, computerSelection));
+while (humanScore <= 5 && computerScore <= 5) {
+playerSelection = '';
+let computerSelection = getComputerChoice();
+computerSelection = computerSelection.toUpperCase();
+result = playRound(playerSelection, computerSelection);
+alert
+
+if (result.includes('Player')) {
+    humanScore++;
+  } else if (result.includes('Computer')) {
+    computerScore++;
+  }
+}
+
+};
+
+alert(win_condition());
+
+ function win_condition() {
+ if (humanScore == 5) {
+  return 'Player Wins!';
+}
+if (computerScore == 5) {
+return 'Computer wins!';
+}
+}}
 
 
 
